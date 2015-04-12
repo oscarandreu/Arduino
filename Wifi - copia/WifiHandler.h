@@ -14,11 +14,11 @@ class WifiHandler
 
         WifiHandler(uint8_t receivePin, uint8_t transmitPin);
         virtual ~WifiHandler();
-//
-        bool connectToWifi(String ssid, String password, int maxConnectionAttemps);
-//        bool wifiConnected();
+
         String getResponse();
-        bool commandResult(String commandResponse);
+        bool getCommandResult(String commandResponse);
+
+        bool connectToWifi(String ssid, String password, int maxConnectionAttemps);
         String getIpAddress();
         String sendCommand(String command);
 

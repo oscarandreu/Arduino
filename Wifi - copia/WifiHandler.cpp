@@ -23,7 +23,8 @@ bool WifiHandler::connectToWifi(String ssid, String password, int maxConnectionA
     String command = "AT+CWJAP=\""+ssid+"\",\""+password+"\"";
     int connAttempts = 0;
 
-    do{
+    do
+    {
         wSerial.print(command);
         connAttempts++;
     }
@@ -36,7 +37,7 @@ bool WifiHandler::connectToWifi(String ssid, String password, int maxConnectionA
 
 String WifiHandler::getIpAddress()
 {
-    wSerial.print("AT+CIFSR");
+    sendCommand("AT+CIFSR");
 
     return getResponse();
 }
@@ -59,6 +60,7 @@ String WifiHandler::getResponse()
         c = wSerial.read();
     }
 
+    Serial.print("-> ");
 //    Serial.println(commandResult(response));
     Serial.println(response);
 
@@ -66,10 +68,11 @@ String WifiHandler::getResponse()
 }
 
 // returns true if response have OK and false if not
-bool WifiHandler::commandResult(String commandResponse)
+bool WifiHandler::getCommandResult(String commandResponse)
 {
     return commandResponse.endsWith(WIFI_OK);
 }
+
 //bool wifiConnected()
 //{
 //    *_wSerial.print("AT");
