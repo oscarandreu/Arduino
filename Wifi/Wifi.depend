@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1428844299 source:c:\personal\arduino\projects\wifi\wifi.ino
+1428857223 source:c:\personal\arduino\projects\wifi\wifi.ino
 	<Arduino.h>
 	<SoftwareSerial.h>
 	<C:\Personal\Arduino\Projects\Wifi\WifiHandler.h>
@@ -54,10 +54,10 @@
 1362990550 c:\arduino\codeblocks\arduino\hardware\arduino\variants\standard\pins_arduino.h
 	<avr/pgmspace.h>
 
-1428843570 source:c:\personal\arduino\projects\wifi\wifihandler.cpp
+1428859184 source:c:\personal\arduino\projects\wifi\wifihandler.cpp
 	"WifiHandler.h"
 	<Arduino.h>
 
-1428844321 c:\personal\arduino\projects\wifi\wifihandler.h
+1428858444 c:\personal\arduino\projects\wifi\wifihandler.h
 	<SoftwareSerial.h>
 

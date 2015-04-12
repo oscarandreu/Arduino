@@ -4,7 +4,7 @@
 #include <SoftwareSerial.h>
 
 #define WIFI_OK      "OK"
-#define WIFI_ERROR      "ERROR"
+//#define WIFI_ERROR      "ERROR"
 
 
 class WifiHandler
@@ -12,13 +12,13 @@ class WifiHandler
     public:
         SoftwareSerial wSerial;
 
-
         WifiHandler(uint8_t receivePin, uint8_t transmitPin);
-//        virtual ~WifiHandler(SoftwareSerial wSerial);
+        virtual ~WifiHandler();
 //
         bool connectToWifi(String ssid, String password, int maxConnectionAttemps);
 //        bool wifiConnected();
         String getResponse();
+        bool commandResult(String commandResponse);
         String getIpAddress();
 
     protected:

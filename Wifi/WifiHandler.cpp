@@ -5,17 +5,15 @@
 WifiHandler::WifiHandler(uint8_t receivePin, uint8_t transmitPin)
     : wSerial(receivePin, transmitPin)
 {
-//    _wSerial(3, 2); // RX | TX
-//    _wSerial = wSerial;
     wSerial.begin(9600);
     _connected = false;
 }
 
 // Desctructor
-//WifiHandler::~WifiHandler()
-//{
-//    //dtor
-//}
+WifiHandler::~WifiHandler()
+{
+    wSerial.end();
+}
 
 //region Public Methods
 
@@ -31,7 +29,7 @@ bool WifiHandler::connectToWifi(String ssid, String password, int maxConnectionA
     }
     while(wSerial.find(WIFI_OK) || connAttempts > maxConnectionAttemps);
 
-    _connected = (connAttempts > maxConnectionAttemps) ? false : true;
+    _connected = !(connAttempts > maxConnectionAttemps);
 
     return _connected;
 }
@@ -40,50 +38,31 @@ String WifiHandler::getIpAddress()
 {
     wSerial.print("AT+CIFSR");
 
-    return wSerial.readString();
+    return getResponse();
 }
 
 String WifiHandler::getResponse()
 {
     String response;
-    do
+    int c = wSerial.read();
+
+    while( c > 0)
     {
-        int c = wSerial.read();
         response += char(c);
-        if(c == 13)
-            Serial.println(response);
-
-        delay(10);
+        c = wSerial.read();
     }
-    while(wSerial.find(WIFI_OK) || wSerial.find(WIFI_ERROR));
 
-    Serial.println(response);
-
-//    int chars = 0;
-//    Serial.println("..................");
-//    Serial.println(wSerial.available());
-//
-//    while(wSerial.available() >= chars);
-//    {
-//      Serial.println(wSerial.available());
-//        int c = wSerial.read();
-//        response += char(c);
-//        chars++;
-//    }
-//    Serial.println("..................");
-//    Serial.println(response);
-
-
-
-//    if (wSerial.available() > 0)
-//    {
-//        char cw = wSerial.read();
-//        Serial.print(cw);
-//    }
+//    Serial.print("-> ");
+//    Serial.println(commandResult(response));
 
     return response;
 }
 
+// returns true if response have OK and false if not
+bool WifiHandler::commandResult(String commandResponse)
+{
+    return commandResponse.endsWith(WIFI_OK);
+}
 //bool wifiConnected()
 //{
 //    *_wSerial.print("AT");
@@ -95,4 +74,5 @@ String WifiHandler::getResponse()
 //regioni Private Methods
 
 //endregion
+
 
