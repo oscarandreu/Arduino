@@ -11,17 +11,10 @@ String serialImput = "";
 //    wSerial.print("AT");
 //    return wSerial.find(WIFI_OK) ? true : false;
 //}
-
-int readFromSerial()
+void flushSerial()
 {
-    int result = 0;
-
-    if (Serial.available() > 0)
-    {
-        result = Serial.read();
-    }
-
-    return result;
+    serialImput = "";
+    Serial.flush();
 }
 
 void setup()
@@ -40,31 +33,44 @@ void loop()
     if (Serial.available() > 0)
     {
         int code = Serial.read();
+        serialImput += char(code);
 
         if(code == 33)
+        {
             wifiHandler.getIpAddress();
-        else
-            wifiHandler.wSerial.print(char(code));
+            flushSerial();
+        }
+        else if(code == 10)
+        {
+            wifiHandler.sendCommand(serialImput);
+            flushSerial();
+        }
     }
-
-//    if (Serial.available() > 0)
-//    {
-//        int code = Serial.read();
-//
-//        if(code == 33)
-//        {
-//            wifiHandler.getIpAddress();
-//            serialImput = "";
-//        }
-//        else if(code > 31)
-//        {
-//            serialImput += char(code);
-//        }
-//        else if(code == 10)
-//        {
-//            serialImput += char(code);
-//            wifiHandler.sendCommand(serialImput);
-//            serialImput = "";
-//        }
-//    }
 }
+
+
+
+
+
+/*
+#include <Arduino.h>
+#include <SoftwareSerial.h>
+SoftwareSerial BT1(3, 2); // RX | TX
+
+void setup()
+  {  Serial.begin(9600);
+     BT1.begin(9600);
+  }
+
+void loop()
+  {  String B= "." ;
+     if (BT1.available())
+         { char c = BT1.read() ;
+           Serial.print(c);
+         }
+     if (Serial.available())
+         {  char c = Serial.read();
+            BT1.print(c);
+         }
+   }
+//*/

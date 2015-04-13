@@ -58,17 +58,21 @@ String WifiHandler::getResponse()
         response += char(c);
         c = wSerial.read();
     }
-
-//    Serial.println(commandResult(response));
-    Serial.println(response);
+    response.trim();
+//    commandResult(response);
+    Serial.println(commandResult(response));
+//    Serial.println(response);
 
     return response;
 }
 
 // returns true if response have OK and false if not
-bool WifiHandler::commandResult(String commandResponse)
+bool WifiHandler::commandResult(String response)
 {
-    return commandResponse.endsWith(WIFI_OK);
+    Serial.println(response);
+//    response.trim();
+
+   return response.endsWith(WIFI_OK);
 }
 //bool wifiConnected()
 //{
