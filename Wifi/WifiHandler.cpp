@@ -36,7 +36,7 @@ bool WifiHandler::connectToWifi(String ssid, String password, int maxConnectionA
 
 String WifiHandler::getIpAddress()
 {
-    wSerial.print("AT+CIFSR");
+    sendCommand("AT+CIFSR");
 
     return getResponse();
 }
