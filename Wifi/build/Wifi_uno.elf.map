@@ -141,6 +141,12 @@ Discarded input sections
  .bss           0x00000000        0x0 build\Wifi.o
  .text          0x00000000        0x0 build\WifiHandler.o
  .bss           0x00000000        0x0 build\WifiHandler.o
+ .text._ZN11WifiHandler6listenEi
+                0x00000000        0x0 build\WifiHandler.o
+ .text._ZN11WifiHandler15ConnectToServerE6Stringi
+                0x00000000        0x0 build\WifiHandler.o
+ .text._ZN11WifiHandler11SendMessageE6String
+                0x00000000        0x0 build\WifiHandler.o
  .text._ZN11WifiHandlerD2Ev
                 0x00000000        0x0 build\WifiHandler.o
  .text._ZN11WifiHandlerC2Ehh
@@ -220,8 +226,6 @@ Discarded input sections
  .text._ZN5Print7printlnEli
                 0x00000000        0x0 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
  .text._ZN5Print5printEii
-                0x00000000        0x0 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
- .text._ZN5Print5printEPKc
                 0x00000000        0x0 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
  .text._ZN5Print10printFloatEdh
                 0x00000000        0x0 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
@@ -683,7 +687,7 @@ LOAD c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x21d2
+.text           0x00000000     0x22b0
  *(.vectors)
  .vectors       0x00000000       0x68 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vectors
@@ -796,260 +800,266 @@ LOAD c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text._Z11flushSerialv
                 0x0000069c       0x16 build\Wifi.o
                 0x0000069c                flushSerial()
- .text.loop     0x000006b2       0xac build\Wifi.o
+ .text.loop     0x000006b2      0x13c build\Wifi.o
                 0x000006b2                loop
- .text._ZN11WifiHandler13commandResultE6String
-                0x0000075e       0x68 build\WifiHandler.o
-                0x0000075e                WifiHandler::commandResult(String)
  .text._ZN11WifiHandler11getResponseEv
-                0x000007c6       0xa4 build\WifiHandler.o
-                0x000007c6                WifiHandler::getResponse()
- .text._ZN11WifiHandler11sendCommandE6String
-                0x0000086a       0x2a build\WifiHandler.o
-                0x0000086a                WifiHandler::sendCommand(String)
- .text._ZN11WifiHandler12getIpAddressEv
+                0x000007ee       0x46 build\WifiHandler.o
+                0x000007ee                WifiHandler::getResponse()
+ .text._ZN11WifiHandler13commandResultE6String
+                0x00000834       0x60 build\WifiHandler.o
+                0x00000834                WifiHandler::commandResult(String)
+ .text._ZN11WifiHandler11sendCommandE6StringRS0_
                 0x00000894       0x84 build\WifiHandler.o
-                0x00000894                WifiHandler::getIpAddress()
+                0x00000894                WifiHandler::sendCommand(String, String&)
+ .text._ZN11WifiHandler9getCwModeEv
+                0x00000918       0x72 build\WifiHandler.o
+                0x00000918                WifiHandler::getCwMode()
+ .text._ZN11WifiHandler12getIpAddressER6String
+                0x0000098a       0x66 build\WifiHandler.o
+                0x0000098a                WifiHandler::getIpAddress(String&)
  .text._ZN11WifiHandler13connectToWifiE6StringS0_i
-                0x00000918       0xda build\WifiHandler.o
-                0x00000918                WifiHandler::connectToWifi(String, String, int)
+                0x000009f0       0xda build\WifiHandler.o
+                0x000009f0                WifiHandler::connectToWifi(String, String, int)
  .text._ZN11WifiHandlerD1Ev
-                0x000009f2       0x24 build\WifiHandler.o
-                0x000009f2                WifiHandler::~WifiHandler()
+                0x00000aca       0x24 build\WifiHandler.o
+                0x00000aca                WifiHandler::~WifiHandler()
  .text._ZN11WifiHandlerD0Ev
-                0x00000a16       0x3a build\WifiHandler.o
-                0x00000a16                WifiHandler::~WifiHandler()
+                0x00000aee       0x3a build\WifiHandler.o
+                0x00000aee                WifiHandler::~WifiHandler()
  .text._ZN11WifiHandlerC1Ehh
-                0x00000a50       0x3a build\WifiHandler.o
-                0x00000a50                WifiHandler::WifiHandler(unsigned char, unsigned char)
+                0x00000b28       0x3a build\WifiHandler.o
+                0x00000b28                WifiHandler::WifiHandler(unsigned char, unsigned char)
  .text._ZN14SoftwareSerial6listenEv
-                0x00000a8a       0x38 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000a8a                SoftwareSerial::listen()
+                0x00000b62       0x38 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000b62                SoftwareSerial::listen()
  .text._ZN14SoftwareSerial4recvEv
-                0x00000ac2       0xd4 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000ac2                SoftwareSerial::recv()
+                0x00000b9a       0xd4 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000b9a                SoftwareSerial::recv()
  .text._ZN14SoftwareSerial16handle_interruptEv
-                0x00000b96       0x12 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000b96                SoftwareSerial::handle_interrupt()
+                0x00000c6e       0x12 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000c6e                SoftwareSerial::handle_interrupt()
  .text.__vector_3
-                0x00000ba8       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000ba8                __vector_3
+                0x00000c80       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000c80                __vector_3
  .text.__vector_4
-                0x00000bf0       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000bf0                __vector_4
+                0x00000cc8       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000cc8                __vector_4
  .text.__vector_5
-                0x00000c38       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000c38                __vector_5
+                0x00000d10       0x48 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000d10                __vector_5
  .text._ZN14SoftwareSerial5beginEl
-                0x00000c80      0x152 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000c80                SoftwareSerial::begin(long)
+                0x00000d58      0x152 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000d58                SoftwareSerial::begin(long)
  .text._ZN14SoftwareSerial3endEv
-                0x00000dd2       0x6a C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000dd2                SoftwareSerial::end()
+                0x00000eaa       0x6a C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000eaa                SoftwareSerial::end()
  .text._ZN14SoftwareSerialD1Ev
-                0x00000e3c       0x12 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000e3c                SoftwareSerial::~SoftwareSerial()
+                0x00000f14       0x12 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000f14                SoftwareSerial::~SoftwareSerial()
  .text._ZN14SoftwareSerial4readEv
-                0x00000e4e       0x42 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000e4e                SoftwareSerial::read()
+                0x00000f26       0x42 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000f26                SoftwareSerial::read()
  .text._ZN14SoftwareSerial9availableEv
-                0x00000e90       0x34 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000e90                SoftwareSerial::available()
+                0x00000f68       0x34 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000f68                SoftwareSerial::available()
  .text._ZN14SoftwareSerial5writeEh
-                0x00000ec4      0x164 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00000ec4                SoftwareSerial::write(unsigned char)
+                0x00000f9c      0x164 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00000f9c                SoftwareSerial::write(unsigned char)
  .text._ZN14SoftwareSerial5flushEv
-                0x00001028       0x22 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00001028                SoftwareSerial::flush()
+                0x00001100       0x22 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00001100                SoftwareSerial::flush()
  .text._ZN14SoftwareSerial4peekEv
-                0x0000104a       0x38 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x0000104a                SoftwareSerial::peek()
+                0x00001122       0x38 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00001122                SoftwareSerial::peek()
  .text._ZN14SoftwareSerial5setRXEh
-                0x00001082       0x56 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00001082                SoftwareSerial::setRX(unsigned char)
+                0x0000115a       0x56 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x0000115a                SoftwareSerial::setRX(unsigned char)
  .text._ZN14SoftwareSerial5setTXEh
-                0x000010d8       0x56 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x000010d8                SoftwareSerial::setTX(unsigned char)
+                0x000011b0       0x56 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x000011b0                SoftwareSerial::setTX(unsigned char)
  .text._ZN14SoftwareSerialC1Ehhb
-                0x0000112e       0x5c C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x0000112e                SoftwareSerial::SoftwareSerial(unsigned char, unsigned char, bool)
+                0x00001206       0x5c C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x00001206                SoftwareSerial::SoftwareSerial(unsigned char, unsigned char, bool)
  .text._Z11serialEventv
-                0x0000118a        0x2 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x0000118a                serialEvent()
+                0x00001262        0x2 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001262                serialEvent()
  .text.__vector_18
-                0x0000118c       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x0000118c                __vector_18
+                0x00001264       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001264                __vector_18
  .text._Z14serialEventRunv
-                0x00001202       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00001202                serialEventRun()
+                0x000012da       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x000012da                serialEventRun()
  .text.__vector_19
-                0x00001228       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00001228                __vector_19
+                0x00001300       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001300                __vector_19
  .text._ZN14HardwareSerial5beginEm
-                0x0000129e      0x10e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x0000129e                HardwareSerial::begin(unsigned long)
+                0x00001376      0x10e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001376                HardwareSerial::begin(unsigned long)
  .text._ZN14HardwareSerial9availableEv
-                0x000013ac       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x000013ac                HardwareSerial::available()
+                0x00001484       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001484                HardwareSerial::available()
  .text._ZN14HardwareSerial4peekEv
-                0x000013ce       0x40 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x000013ce                HardwareSerial::peek()
+                0x000014a6       0x40 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x000014a6                HardwareSerial::peek()
  .text._ZN14HardwareSerial4readEv
-                0x0000140e       0x52 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x0000140e                HardwareSerial::read()
+                0x000014e6       0x52 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x000014e6                HardwareSerial::read()
  .text._ZN14HardwareSerial5flushEv
-                0x00001460       0x20 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00001460                HardwareSerial::flush()
+                0x00001538       0x20 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001538                HardwareSerial::flush()
  .text._ZN14HardwareSerial5writeEh
-                0x00001480       0x80 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00001480                HardwareSerial::write(unsigned char)
+                0x00001558       0x80 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x00001558                HardwareSerial::write(unsigned char)
  .text._GLOBAL__I_rx_buffer
-                0x00001500       0xac C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
- .text.main     0x000015ac       0x1e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(main.cpp.o)
-                0x000015ac                main
- .text._ZdlPv   0x000015ca        0x6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(new.cpp.o)
-                0x000015ca                operator delete(void*)
+                0x000015d8       0xac C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+ .text.main     0x00001684       0x1e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(main.cpp.o)
+                0x00001684                main
+ .text._ZdlPv   0x000016a2        0x6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(new.cpp.o)
+                0x000016a2                operator delete(void*)
  .text._ZN5Print5writeEPKhj
-                0x000015d0       0x54 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x000015d0                Print::write(unsigned char const*, unsigned int)
+                0x000016a8       0x54 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x000016a8                Print::write(unsigned char const*, unsigned int)
  .text._ZN5Print7printlnEv
-                0x00001624       0x40 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x00001624                Print::println()
+                0x000016fc       0x40 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x000016fc                Print::println()
  .text._ZN5Print5writeEPKc
-                0x00001664       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x00001664                Print::write(char const*)
+                0x0000173c       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x0000173c                Print::write(char const*)
  .text._ZN5Print11printNumberEmh
-                0x0000169c       0xc8 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x0000169c                Print::printNumber(unsigned long, unsigned char)
+                0x00001774       0xc8 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x00001774                Print::printNumber(unsigned long, unsigned char)
  .text._ZN5Print5printEli
-                0x00001764       0x80 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x00001764                Print::print(long, int)
+                0x0000183c       0x80 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x0000183c                Print::print(long, int)
  .text._ZN5Print7printlnEii
-                0x000017e4       0x3e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x000017e4                Print::println(int, int)
+                0x000018bc       0x3e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x000018bc                Print::println(int, int)
+ .text._ZN5Print5printEPKc
+                0x000018fa        0x6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x000018fa                Print::print(char const*)
  .text._ZN5Print7printlnEPKc
-                0x00001822       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x00001822                Print::println(char const*)
+                0x00001900       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x00001900                Print::println(char const*)
  .text._ZN5Print5printERK6String
-                0x00001848       0x66 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x00001848                Print::print(String const&)
+                0x00001926       0x66 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x00001926                Print::print(String const&)
  .text._ZN5Print7printlnERK6String
-                0x000018ae       0x28 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                0x000018ae                Print::println(String const&)
+                0x0000198c       0x28 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                0x0000198c                Print::println(String const&)
  .text._ZN6Stream9timedReadEv
-                0x000018d6       0x58 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
-                0x000018d6                Stream::timedRead()
+                0x000019b4       0x58 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
+                0x000019b4                Stream::timedRead()
  .text._ZN6Stream9findUntilEPcjS0_j
-                0x0000192e       0xc6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
-                0x0000192e                Stream::findUntil(char*, unsigned int, char*, unsigned int)
+                0x00001a0c       0xc6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
+                0x00001a0c                Stream::findUntil(char*, unsigned int, char*, unsigned int)
  .text._ZN6Stream9findUntilEPcS0_
-                0x000019f4       0x32 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
-                0x000019f4                Stream::findUntil(char*, char*)
+                0x00001ad2       0x32 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
+                0x00001ad2                Stream::findUntil(char*, char*)
  .text._ZN6Stream4findEPc
-                0x00001a26        0xa C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
-                0x00001a26                Stream::find(char*)
+                0x00001b04        0xa C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
+                0x00001b04                Stream::find(char*)
  .text.__vector_16
-                0x00001a30       0x90 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
-                0x00001a30                __vector_16
- .text.millis   0x00001ac0       0x1c C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
-                0x00001ac0                millis
- .text.init     0x00001adc       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
-                0x00001adc                init
- .text.pinMode  0x00001b52       0x7e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
-                0x00001b52                pinMode
+                0x00001b0e       0x90 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x00001b0e                __vector_16
+ .text.millis   0x00001b9e       0x1c C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x00001b9e                millis
+ .text.init     0x00001bba       0x76 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x00001bba                init
+ .text.pinMode  0x00001c30       0x7e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
+                0x00001c30                pinMode
  .text.turnOffPWM
-                0x00001bd0       0x5a C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
+                0x00001cae       0x5a C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
  .text.digitalWrite
-                0x00001c2a       0x66 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
-                0x00001c2a                digitalWrite
+                0x00001d08       0x66 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring_digital.c.o)
+                0x00001d08                digitalWrite
  .text._ZNK6StringixEj
-                0x00001c90       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001c90                String::operator[](unsigned int) const
+                0x00001d6e       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001d6e                String::operator[](unsigned int) const
  .text._ZN6String4trimEv
-                0x00001cb2       0xb6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001cb2                String::trim()
+                0x00001d90       0xb6 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001d90                String::trim()
  .text._ZNK6String8endsWithERKS_
-                0x00001d68       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001d68                String::endsWith(String const&) const
+                0x00001e46       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001e46                String::endsWith(String const&) const
  .text._ZN6String12changeBufferEj
-                0x00001dac       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001dac                String::changeBuffer(unsigned int)
+                0x00001e8a       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001e8a                String::changeBuffer(unsigned int)
  .text._ZN6String7reserveEj
-                0x00001de0       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001de0                String::reserve(unsigned int)
+                0x00001ebe       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001ebe                String::reserve(unsigned int)
  .text._ZN6String6concatEPKcj
-                0x00001e18       0x5a C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001e18                String::concat(char const*, unsigned int)
+                0x00001ef6       0x5a C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001ef6                String::concat(char const*, unsigned int)
  .text._ZN6String6concatEc
-                0x00001e72       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001e72                String::concat(char)
+                0x00001f50       0x26 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001f50                String::concat(char)
  .text._ZN6String10invalidateEv
-                0x00001e98       0x24 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001e98                String::invalidate()
+                0x00001f76       0x24 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001f76                String::invalidate()
  .text._ZplRK15StringSumHelperPKc
-                0x00001ebc       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001ebc                operator+(StringSumHelper const&, char const*)
+                0x00001f9a       0x38 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001f9a                operator+(StringSumHelper const&, char const*)
  .text._ZplRK15StringSumHelperRK6String
-                0x00001ef4       0x2c C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001ef4                operator+(StringSumHelper const&, String const&)
+                0x00001fd2       0x2c C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001fd2                operator+(StringSumHelper const&, String const&)
  .text._ZN6String4copyEPKcj
-                0x00001f20       0x42 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001f20                String::copy(char const*, unsigned int)
+                0x00001ffe       0x42 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00001ffe                String::copy(char const*, unsigned int)
  .text._ZN6StringC1EPKc
-                0x00001f62       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001f62                String::String(char const*)
+                0x00002040       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00002040                String::String(char const*)
  .text._ZN6StringC2EPKc
-                0x00001f96       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001f96                String::String(char const*)
+                0x00002074       0x34 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00002074                String::String(char const*)
  .text._ZN6StringaSEPKc
-                0x00001fca       0x32 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001fca                String::operator=(char const*)
+                0x000020a8       0x32 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x000020a8                String::operator=(char const*)
  .text._ZN6StringaSERKS_
-                0x00001ffc       0x2e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00001ffc                String::operator=(String const&)
+                0x000020da       0x2e C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x000020da                String::operator=(String const&)
  .text._ZN6StringC1ERKS_
-                0x0000202a       0x16 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x0000202a                String::String(String const&)
+                0x00002108       0x16 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x00002108                String::String(String const&)
  .text._ZN6StringD1Ev
-                0x00002040        0xc C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x00002040                String::~String()
+                0x0000211e        0xc C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x0000211e                String::~String()
  .text._ZN6StringD2Ev
-                0x0000204c        0xc C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                0x0000204c                String::~String()
- .text.libgcc   0x00002058       0x3e c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
-                0x00002058                __mulsi3
- .text.libgcc   0x00002096       0x26 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
-                0x00002096                __divmodhi4
-                0x00002096                _div
- .text.libgcc   0x000020bc       0x44 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x000020bc                __udivmodsi4
- .text.libgcc   0x00002100       0x28 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002100                __udivmodhi4
- .text.libgcc   0x00002128        0xc c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
-                0x0000212c                __tablejump__
-                0x00002128                __tablejump2__
- .text.ctype    0x00002134       0x10 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(isspace.o)
-                0x00002134                isspace
- .text.ctype    0x00002144        0x6 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(cty_isfalse.o)
-                0x00002148                __ctype_istrue
-                0x00002144                __ctype_isfalse
- .text.libgcc   0x0000214a       0x38 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x0000214a                __prologue_saves__
- .text.libgcc   0x00002182       0x36 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00002182                __epilogue_restores__
-                0x000021b8                . = ALIGN (0x2)
+                0x0000212a        0xc C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                0x0000212a                String::~String()
+ .text.libgcc   0x00002136       0x3e c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00002136                __mulsi3
+ .text.libgcc   0x00002174       0x26 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00002174                __divmodhi4
+                0x00002174                _div
+ .text.libgcc   0x0000219a       0x44 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000219a                __udivmodsi4
+ .text.libgcc   0x000021de       0x28 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000021de                __udivmodhi4
+ .text.libgcc   0x00002206        0xc c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+                0x0000220a                __tablejump__
+                0x00002206                __tablejump2__
+ .text.ctype    0x00002212       0x10 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(isspace.o)
+                0x00002212                isspace
+ .text.ctype    0x00002222        0x6 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(cty_isfalse.o)
+                0x00002226                __ctype_istrue
+                0x00002222                __ctype_isfalse
+ .text.libgcc   0x00002228       0x38 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00002228                __prologue_saves__
+ .text.libgcc   0x00002260       0x36 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00002260                __epilogue_restores__
+                0x00002296                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000021b8        0x0 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000021b8                exit
-                0x000021b8                _exit
+ .fini9         0x00002296        0x0 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00002296                exit
+                0x00002296                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x000021b8       0x16 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_dtors.o)
-                0x000021b8                __do_global_dtors
+ .fini6         0x00002296       0x16 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_dtors.o)
+                0x00002296                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -1062,88 +1072,89 @@ LOAD c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000021ce        0x4 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000022ac        0x4 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000021d2                _etext = .
+                0x000022b0                _etext = .
 
-.data           0x00800100       0x88 load address 0x000021d2
+.data           0x00800100      0x104 load address 0x000022b0
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800100       0x3c build\Wifi.o
- .data          0x0080013c       0x1e build\WifiHandler.o
- .data          0x0080015a        0x6 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x0080015c                __malloc_heap_start
-                0x0080015e                __malloc_heap_end
-                0x0080015a                __malloc_margin
+ .data          0x00800100       0x69 build\Wifi.o
+ .data          0x00800169       0x6c build\WifiHandler.o
+ .data          0x008001d5        0x6 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x008001d7                __malloc_heap_start
+                0x008001d9                __malloc_heap_end
+                0x008001d5                __malloc_margin
  *(.data*)
  *(.rodata)
  *(.rodata*)
  .rodata._ZTV11WifiHandler
-                0x00800160        0x8 build\WifiHandler.o
-                0x00800160                vtable for WifiHandler
+                0x008001db        0x8 build\WifiHandler.o
+                0x008001db                vtable for WifiHandler
  .rodata._ZTV14SoftwareSerial
-                0x00800168       0x10 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x00800168                vtable for SoftwareSerial
+                0x008001e3       0x10 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x008001e3                vtable for SoftwareSerial
  .rodata._ZTV14HardwareSerial
-                0x00800178       0x10 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00800178                vtable for HardwareSerial
+                0x008001f3       0x10 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x008001f3                vtable for HardwareSerial
  *(.gnu.linkonce.d*)
-                0x00800188                . = ALIGN (0x2)
-                0x00800188                _edata = .
-                0x00800188                PROVIDE (__data_end, .)
+                0x00800204                . = ALIGN (0x2)
+ *fill*         0x00800203        0x1 00
+                0x00800204                _edata = .
+                0x00800204                PROVIDE (__data_end, .)
 
-.bss            0x00800188      0x121
-                0x00800188                PROVIDE (__bss_start, .)
+.bss            0x00800204      0x121
+                0x00800204                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.wifiHandler
-                0x00800188       0x1f build\Wifi.o
-                0x00800188                wifiHandler
+                0x00800204       0x1f build\Wifi.o
+                0x00800204                wifiHandler
  .bss.serialImput
-                0x008001a7        0x7 build\Wifi.o
-                0x008001a7                serialImput
+                0x00800223        0x7 build\Wifi.o
+                0x00800223                serialImput
  .bss._ZN14SoftwareSerial13active_objectE
-                0x008001ae        0x2 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x008001ae                SoftwareSerial::active_object
+                0x0080022a        0x2 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x0080022a                SoftwareSerial::active_object
  .bss._ZN14SoftwareSerial15_receive_bufferE
-                0x008001b0       0x40 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x008001b0                SoftwareSerial::_receive_buffer
+                0x0080022c       0x40 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x0080022c                SoftwareSerial::_receive_buffer
  .bss._ZN14SoftwareSerial20_receive_buffer_tailE
-                0x008001f0        0x1 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x008001f0                SoftwareSerial::_receive_buffer_tail
+                0x0080026c        0x1 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x0080026c                SoftwareSerial::_receive_buffer_tail
  .bss._ZN14SoftwareSerial20_receive_buffer_headE
-                0x008001f1        0x1 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-                0x008001f1                SoftwareSerial::_receive_buffer_head
+                0x0080026d        0x1 C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
+                0x0080026d                SoftwareSerial::_receive_buffer_head
  .bss.rx_buffer
-                0x008001f2       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x008001f2                rx_buffer
+                0x0080026e       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x0080026e                rx_buffer
  .bss.tx_buffer
-                0x00800236       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x00800236                tx_buffer
- .bss.Serial    0x0080027a       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                0x0080027a                Serial
+                0x008002b2       0x44 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x008002b2                tx_buffer
+ .bss.Serial    0x008002f6       0x22 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
+                0x008002f6                Serial
  .bss.timer0_overflow_count
-                0x0080029c        0x4 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
-                0x0080029c                timer0_overflow_count
+                0x00800318        0x4 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x00800318                timer0_overflow_count
  .bss.timer0_millis
-                0x008002a0        0x4 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
-                0x008002a0                timer0_millis
+                0x0080031c        0x4 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x0080031c                timer0_millis
  .bss.timer0_fract
-                0x008002a4        0x1 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
+                0x00800320        0x1 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(wiring.c.o)
  *(COMMON)
- COMMON         0x008002a5        0x4 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x008002a5                __brkval
-                0x008002a7                __flp
-                0x008002a9                PROVIDE (__bss_end, .)
-                0x000021d2                __data_load_start = LOADADDR (.data)
-                0x0000225a                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800321        0x4 c:/arduino/codeblocks/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800321                __brkval
+                0x00800323                __flp
+                0x00800325                PROVIDE (__bss_end, .)
+                0x000022b0                __data_load_start = LOADADDR (.data)
+                0x000023b4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008002a9        0x0
-                0x008002a9                PROVIDE (__noinit_start, .)
+.noinit         0x00800325        0x0
+                0x00800325                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008002a9                PROVIDE (__noinit_end, .)
-                0x008002a9                _end = .
-                0x008002a9                PROVIDE (__heap_start, .)
+                0x00800325                PROVIDE (__noinit_end, .)
+                0x00800325                _end = .
+                0x00800325                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1247,6 +1258,7 @@ Print::print(String const&)                       C:\Personal\Arduino\Projects\W
                                                   build\WifiHandler.o
 Print::print(__FlashStringHelper const*)          C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::print(char const*)                         C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
+                                                  build\Wifi.o
 Print::print(char)                                C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::print(double, int)                         C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::print(int, int)                            C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
@@ -1259,14 +1271,14 @@ Print::printNumber(unsigned long, unsigned char)  C:\Personal\Arduino\Projects\W
 Print::println()                                  C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(Printable const&)                  C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(String const&)                     C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                                                  build\WifiHandler.o
+                                                  build\Wifi.o
 Print::println(__FlashStringHelper const*)        C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(char const*)                       C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
                                                   build\Wifi.o
 Print::println(char)                              C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(double, int)                       C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(int, int)                          C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
-                                                  build\WifiHandler.o
+                                                  build\Wifi.o
 Print::println(long, int)                         C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(unsigned char, int)                C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
 Print::println(unsigned int, int)                 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Print.cpp.o)
@@ -1276,11 +1288,10 @@ Print::write(unsigned char const*, unsigned int)  C:\Personal\Arduino\Projects\W
                                                   C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
                                                   C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
 Serial                                            C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(HardwareSerial.cpp.o)
-                                                  build\WifiHandler.o
                                                   build\Wifi.o
 SoftwareSerial::SoftwareSerial(unsigned char, unsigned char, bool) C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
-SoftwareSerial::SoftwareSerial(unsigned char, unsigned char, bool) C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
                                                   build\WifiHandler.o
+SoftwareSerial::SoftwareSerial(unsigned char, unsigned char, bool) C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
 SoftwareSerial::_receive_buffer                   C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
 SoftwareSerial::_receive_buffer_head              C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
 SoftwareSerial::_receive_buffer_tail              C:\Personal\Arduino\Projects\Wifi\build\/lib_uno_16.a(SoftwareSerial.cpp.o)
@@ -1323,15 +1334,15 @@ Stream::setTimeout(unsigned long)                 C:\Personal\Arduino\Projects\W
 Stream::timedPeek()                               C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
 Stream::timedRead()                               C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
 String::String(String const&)                     C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-String::String(String const&)                     C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
                                                   build\WifiHandler.o
                                                   build\Wifi.o
+String::String(String const&)                     C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+String::String(char const*)                       C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                                                  build\WifiHandler.o
 String::String(char const*)                       C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
                                                   C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(Stream.cpp.o)
                                                   build\WifiHandler.o
                                                   build\Wifi.o
-String::String(char const*)                       C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
-                                                  build\WifiHandler.o
 String::String(char)                              C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 String::String(char)                              C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 String::String(int, unsigned char)                C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
@@ -1378,6 +1389,7 @@ String::lastIndexOf(char, unsigned int) const     C:\Personal\Arduino\Projects\W
 String::operator<(String const&) const            C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 String::operator<=(String const&) const           C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 String::operator=(String const&)                  C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                                                  build\WifiHandler.o
 String::operator=(char const*)                    C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
                                                   build\Wifi.o
 String::operator>(String const&) const            C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
@@ -1400,19 +1412,24 @@ String::trim()                                    C:\Personal\Arduino\Projects\W
                                                   build\WifiHandler.o
 String::~String()                                 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
                                                   build\WifiHandler.o
-                                                  build\Wifi.o
 String::~String()                                 C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
                                                   build\WifiHandler.o
+                                                  build\Wifi.o
+WifiHandler::ConnectToServer(String, int)         build\WifiHandler.o
+WifiHandler::SendMessage(String)                  build\WifiHandler.o
 WifiHandler::WifiHandler(unsigned char, unsigned char) build\WifiHandler.o
 WifiHandler::WifiHandler(unsigned char, unsigned char) build\WifiHandler.o
                                                   build\Wifi.o
 WifiHandler::commandResult(String)                build\WifiHandler.o
 WifiHandler::connectToWifi(String, String, int)   build\WifiHandler.o
                                                   build\Wifi.o
-WifiHandler::getIpAddress()                       build\WifiHandler.o
+WifiHandler::getCwMode()                          build\WifiHandler.o
+                                                  build\Wifi.o
+WifiHandler::getIpAddress(String&)                build\WifiHandler.o
                                                   build\Wifi.o
 WifiHandler::getResponse()                        build\WifiHandler.o
-WifiHandler::sendCommand(String)                  build\WifiHandler.o
+WifiHandler::listen(int)                          build\WifiHandler.o
+WifiHandler::sendCommand(String, String&)         build\WifiHandler.o
                                                   build\Wifi.o
 WifiHandler::~WifiHandler()                       build\WifiHandler.o
 WifiHandler::~WifiHandler()                       build\WifiHandler.o
@@ -1664,6 +1681,7 @@ operator+(StringSumHelper const&, char const*)    C:\Personal\Arduino\Projects\W
                                                   build\WifiHandler.o
 operator+(StringSumHelper const&, char)           C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 operator+(StringSumHelper const&, int)            C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
+                                                  build\WifiHandler.o
 operator+(StringSumHelper const&, long)           C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 operator+(StringSumHelper const&, unsigned char)  C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)
 operator+(StringSumHelper const&, unsigned int)   C:\Personal\Arduino\Projects\Wifi\build\/core_uno_16.a(WString.cpp.o)

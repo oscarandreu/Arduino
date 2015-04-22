@@ -37,13 +37,36 @@ void loop()
 
         if(code == 33)
         {
-            wifiHandler.getIpAddress();
+            String response;
+            bool ok = wifiHandler.getIpAddress(response);
             flushSerial();
+
+            Serial.println(response);
+            if(ok)
+                Serial.println("OK.................");
+            else
+            {
+                Serial.print("FAIL....................");
+            }
+        }
+        else if(code == '$')
+        {
+            String response = wifiHandler.getCwMode();
+            Serial.println(response);
         }
         else if(code == 10)
         {
-            wifiHandler.sendCommand(serialImput);
+            String response;
+            Serial.println(wifiHandler.sendCommand(serialImput, response));
             flushSerial();
+
+            bool ok = Serial.println(response);
+            if(ok)
+                Serial.println("OK.................");
+            else
+            {
+                Serial.print("FAIL....................");
+            }
         }
     }
 }
